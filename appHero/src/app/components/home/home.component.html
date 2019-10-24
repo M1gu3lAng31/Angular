@@ -1,4 +1,7 @@
-<div class="jumbotron">
+<app-loading *ngIf="loading"></app-loading>
+
+
+<div class="jumbotron" *ngIf="!loading">
 
     <h1>App Hero</h1>
     <p>Esta es una aplicación de superHerores </p>
