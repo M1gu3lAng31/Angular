@@ -1,0 +1,17 @@
+<div class="contenido">
+    <div class="titulo">
+        <h1>{{HeroeFiltrado.nombre}}</h1>
+    </div>
+    <div class="InformacionHeroe">
+        <div class="imagenHeroe">
+            <img [src]="HeroeFiltrado.img" alt="">
+        </div>
+        <div class="contenidoHeroe">
+            <p>{{HeroeFiltrado.bio}}</p>
+            <p>{{HeroeFiltrado.casa}}</p>
+            <p><img src="assets/img/DC.png" alt="" *ngIf="HeroeFiltrado.casa=='DC'"></p>
+            <p><img src="assets/img/MARVEL.png" alt="" *ngIf="HeroeFiltrado.casa=='Marvel'"></p>
+            <p><small class="text-muted">Fecha aparición: {{HeroeFiltrado.aparicion}}</small></p>
+        </div>
+    </div>
+</div>

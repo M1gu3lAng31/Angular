@@ -9,16 +9,15 @@ import { HeroeService } from '../../services/heroe.service';
   styleUrls: ['./informacion-heroe.component.css']
 })
 export class InformacionHeroeComponent implements OnInit {
-
+ 
   public HeroeFiltrado:any={};
-
-  constructor(private ActivatedRouter:ActivatedRoute,private _HeroeService:HeroeService) { 
   
-
-    const idHeroeUrl=this.ActivatedRouter.snapshot.paramMap.get('id');
+  constructor(private ActivatedRouter:ActivatedRoute,private _HeroeService:HeroeService) { 
     
-    this.HeroeFiltrado=this._HeroeService.BuscarHeroes(idHeroeUrl);
+    const idHeroeUrl=this.ActivatedRouter.snapshot.paramMap.get('id');
+   this.HeroeFiltrado=this._HeroeService.BuscarHeroes(idHeroeUrl);
     console.log(this.HeroeFiltrado);
+
     
   }
   
@@ -26,6 +25,10 @@ export class InformacionHeroeComponent implements OnInit {
   
   
   ngOnInit() {
+  
+    
   }
 
-}
+  }
+
+
