@@ -8,6 +8,7 @@ import { HeroesComponent } from './components/heroes/heroes.component';
 import { appRouting } from './app.routes';
 import { LoadingComponent } from './components/shared/loading/loading.component';
 import { InformacionHeroeComponent } from './components/informacion-heroe/informacion-heroe.component';
+import { BuscarheroeComponent } from './components/buscarheroe/buscarheroe.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { InformacionHeroeComponent } from './components/informacion-heroe/inform
     HomeComponent,
     HeroesComponent,
     LoadingComponent,
-    InformacionHeroeComponent
+    InformacionHeroeComponent,
+    BuscarheroeComponent
   ],
   imports: [
     BrowserModule,

@@ -79,4 +79,14 @@ export class HeroeService {
   }
 
   constructor() { }
+
+
+  public BuscarHeroePorTermino(termino:string){
+    termino=termino.toLowerCase();
+    
+    return this.Heroes.filter((heroe)=>heroe.nombre.toLowerCase().indexOf(termino)>-1)
+
+    
+
+  }
 }

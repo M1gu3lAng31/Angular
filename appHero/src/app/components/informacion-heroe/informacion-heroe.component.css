@@ -39,6 +39,7 @@
 
 .InformacionHeroe .contenidoHeroe {
     width: 70%;
+    padding: 2%;
     height: 80%;
     /* background: rgb(43, 8, 158); */
 }
@@ -51,5 +52,6 @@
 
 .InformacionHeroe .contenidoHeroe p {
     font-size: 25px;
+    text-align: justify;
     /* background: rgb(43, 8, 158); */
 }
