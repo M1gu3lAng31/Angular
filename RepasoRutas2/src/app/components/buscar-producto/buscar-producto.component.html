@@ -1,0 +1,15 @@
+<div class="tarjetas">
+    <div class="card" *ngFor="let producto of productosFiltadros">
+        <img [src]="producto.imageUrl" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{producto.productName}}</h5>
+            <p>Calificacion:</p>
+            <div class="stars-outer">
+                <div class="stars-inner" [style.width]="obtenerPorcentaje(producto.starRating)"></div>
+            </div>
+            <!-- <p class="card-text">{{producto.description}}</p> -->
+            <p class="card-footer">Precio: ${{producto.price}}</p>
+            <button (click)="mandarInformacion(producto.productId)" type="button" name="" id="" class="btn btn-success btn-lg btn-block">Ver Mas...</button>
+        </div>
+    </div>
+</div>

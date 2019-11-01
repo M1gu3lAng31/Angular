@@ -1,0 +1,21 @@
+<div class="contenido">
+    <div class="titulo">
+        <h1>{{productoElegido.productName}}</h1>
+    </div>
+    <div class="InformacionProducto">
+        <div class="imagenProducto">
+            <img [src]="productoElegido.imageUrl" alt="">
+        </div>
+        <div class="contenidoProducto">
+            <p> <strong>Codigo del producto:</strong> {{productoElegido.productCode}}</p>
+            <p><strong>Descripcion</strong> <br>{{productoElegido.description}}</p>
+            <p>${{productoElegido.price}}</p>
+            <p><small class="text-muted">Publicación: {{productoElegido.releaseDate}}</small></p>
+        </div>
+        <div>
+            <button type="button" (click)="listaProductos()" name="" id="" class="btn btn-info btn-lg btn-block">Regresar</button>
+
+            <!-- <button type="button" name="" id="" class="btn btn-success btn-lg btn-block">Comprar</button> -->
+        </div>
+    </div>
+</div>

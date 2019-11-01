@@ -1,4 +1,21 @@
-/* You can add global styles to this file, and also import other style files */
+.card {
+    width: 33%;
+    /* height: 33%; */
+    padding: 2%;
+    box-sizing: border-box;
+}
+
+.tarjetas {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card img {
+    width: 100%;
+    height: 60%;
+}
 
 .stars-outer {
     display: inline-block;
@@ -19,9 +36,10 @@
     /* width: 0; */
 }
 
-.stars-inner {
+
+/* .stars-inner {
     width: 50%;
-}
+} */
 
 .stars-inner::before {
     content: "\f005 \f005 \f005 \f005 \f005";
