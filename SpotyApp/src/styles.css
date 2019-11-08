@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+.nav-link {
+    color: rgb(29, 185, 84) !important;
+}
+
+body {
+    background: #2b3035 !important;
+}
+
+.tarjetas {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tarjetas .card {
+    box-sizing: border-box;
+    margin: 1%;
+    width: 29% !important;
+}

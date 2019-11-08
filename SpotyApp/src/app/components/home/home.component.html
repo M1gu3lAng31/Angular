@@ -1,0 +1,13 @@
+<div class="tarjetas">
+    <div class="card" *ngFor="let releases of NewRelases">
+        <img [src]="releases.images[1].url" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">{{releases.name}}</h5>
+            <p class="card-text">
+                <span class="badge-pill badge-success" *ngFor="let artist of releases.artists">{{artist.name}}</span>
+            </p>
+            <p class="card-text">{{releases.release_date}}</p>
+            <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+        </div>
+    </div>
+</div>
