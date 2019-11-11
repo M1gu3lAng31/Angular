@@ -1,0 +1,107 @@
+<div class="container">
+    <br>
+    <h1>PIPES</h1>
+    <br>
+
+    <table class="table text-center">
+        <thead class="thead-inverse">
+            <tr>
+                <th>Variable</th>
+                <th>Pipe</th>
+                <th>Producto</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>{{Nombre}}</td>
+                <td>UpperCase</td>
+                <td>{{Nombre | uppercase}}</td>
+            </tr>
+            <tr>
+                <td>{{Nombre}}</td>
+                <td>LowerCase</td>
+                <td>{{Nombre | lowercase}}</td>
+            </tr>
+            <tr>
+                <td>{{Nombre}}</td>
+                <td>Slice:3</td>
+                <td>{{Nombre | slice:3}}</td>
+            </tr>
+            <tr>
+                <td>{{Nombre}}</td>
+                <td>Slice: 0 : 3</td>
+                <td>{{Nombre | slice: 0 : 3}}</td>
+            </tr>
+            <tr>
+                <td>{{numeros}}</td>
+                <td>Slice: 0 : 4</td>
+                <td>{{numeros | slice: 0 : 4}}</td>
+            </tr>
+            <tr>
+                <td>{{pi}}</td>
+                <td>Number</td>
+                <td>{{pi | number:'0.2-4'}}</td>
+            </tr>
+            <tr>
+                <td>{{porcentaje}}</td>
+                <td>Number</td>
+                <td>{{porcentaje | percent:'0.2'}}</td>
+            </tr>
+            <tr>
+                <td>{{salario}}</td>
+                <td>Number</td>
+                <td>{{salario | currency}}</td>
+            </tr>
+            <tr>
+                <td>{{salario}}</td>
+                <td>Number</td>
+                <td>{{salario | currency:'VES'}}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>Date</td>
+                <td>{{fecha | date}}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>Date</td>
+                <td>{{fecha | date:'longDate'}}</td>
+            </tr>
+            <tr>
+                <td>{{fecha}}</td>
+                <td>Date</td>
+                <td>{{fecha | date:'dd/MMMM/yyyy'}}</td>
+            </tr>
+            <tr>
+                <td>{{persona}}</td>
+                <td>JSON</td>
+                <td>{{persona | json}}</td>
+            </tr>
+            <tr>
+                <td>{{nombre2}}</td>
+                <td>Capitalizado</td>
+                <td>{{nombre2 | capitalizado}}</td>
+            </tr>
+            <tr>
+                <td>{{ nombre2 }}</td>
+                <td>Contraseña:{{activar}}
+                    <br>
+                    <br>
+                    <button type="button" (click)="activar = !activar" class="btn btn-success btn-block">Activar</button>
+                    <!-- <button (click)="activar =!activar" type="button" class="btn btn-block-success">
+                    Activar
+                    </button> -->
+                </td>
+                <td>{{nombre2 | contrasena:activar}}</td>
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    <h4> YOU TUBE <small>Videos</small></h4>
+    <hr>
+    <iframe [src]="video | domSanitizer:'https://www.youtube.com/embed/'" frameborder="0" width="560" height="315" allowfullscreen></iframe>
+
+</div>
