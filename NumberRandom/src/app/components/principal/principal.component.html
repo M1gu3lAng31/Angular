@@ -5,7 +5,7 @@
         <button type="button" id="espacio" class="btn btn-outline-primary" (click)="prueba()" *ngIf="!ocultar">Nombres Aleatorio</button>
 
         <section class="body" *ngIf="ocultar" [ngStyle]="{'background': color}">
-            <input type="text" class="Input" id="elInput" (keypress)="ObtenerDatos()" autofocus>
+            <!-- <input type="text" class="Input" id="elInput" (keypress)="ObtenerDatos()"> -->
             <div class="opciones">
 
 
@@ -21,12 +21,16 @@
                 <div class="gender">
                     <h6>GENDER</h6>
                 </div>
-                <a role="button" class="gif"><img class="iconoGif" src="../../../assets/images/flag-random.gif" alt=""></a>
+                <a role="button" class="gif" (click)="MostrarLista()"><img class="iconoGif" src="../../../assets/images/flag-random.gif" alt=""></a>
+
                 <div class="region">
                     <h6>REGION</h6>
                 </div>
             </div>
             <div class="container">
+                <div [ngClass]="{'container::after': ListaActivada}">
+
+                </div>
                 <div class="foto">
                     <img class="rounded-circle mt-1" [src]="datos.photo" alt="">
                 </div>
@@ -39,7 +43,7 @@
                         <li>👤 {{datos.gender}} </li>
                         <li>🌐 {{datos.region}}</li>
                         <li>📞 {{datos.phone}}</li>
-                        <li>🎂 {{datos.birthday.dmy}}</li>
+                        <li>🎂 {{datos.birthday?.dmy}}</li>
                         <li>✉️ {{datos.email}}</li>
                         <li>🔑 {{datos.password}}</li>
                     </ul>

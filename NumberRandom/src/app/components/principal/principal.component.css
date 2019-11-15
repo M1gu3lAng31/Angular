@@ -31,6 +31,12 @@
     flex-wrap: wrap;
 }
 
+.body .container::after {
+    background: purple;
+    width: 10%;
+    height: 10%;
+}
+
 .container .foto {
     width: 100%;
     height: 30%;
@@ -110,6 +116,7 @@
 
 .opciones .gif {
     left: 10%;
+    opacity: 1;
 }
 
 .lista ul {
