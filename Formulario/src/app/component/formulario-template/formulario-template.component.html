@@ -1,0 +1,81 @@
+<div class="row">
+
+    <div class="col-12">
+        <h1>Formularios</h1>
+    </div>
+    <div class="col-12" [formGroup]="Formulario">
+        <div class="form-group">
+            <label for="">Nombre</label>
+            <input type="text" formControlName="nombre" class="form-control" [ngClass]="{
+
+                'is-valid': !Formulario.get('nombre').errors && Formulario.get('nombre').touched,
+                
+                'is-invalid': Formulario.get('nombre').hasError('required') && Formulario.get('nombre').touched || 
+                Formulario.get('nombre').hasError('minlength'),
+            
+                'is-invalid': Formulario.get('nombre').hasError('ExisteNumero')}" aria-describedby="helpId" placeholder="">
+
+
+
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.nombre.errors?.required && Formulario.controls.nombre.touched">Nombre Necesario</div>
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.nombre.errors?.minlength">Minimo 5 letras</div>
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.nombre.errors?.ExisteNumero">Solo Letras</div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Email</label>
+            <input type="text" formControlName="email" class="form-control" [ngClass]="{'is-valid': !Formulario.get('email').errors && Formulario.get('email').touched, 'is-invalid': Formulario.get('email').hasError('required') && Formulario.get('email').touched || Formulario.get('email').hasError('minlength')}"
+                aria-describedby="helpId" placeholder="">
+
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.email.errors?.required && Formulario.controls.email.touched">Email Necesario</div>
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.email.errors?.pattern">Email Invalido</div>
+        </div>
+
+        <div class="form-group">
+            <label for="">Mensaje</label>
+            <textarea formControlName="mensaje" class="form-control" [ngClass]="{'is-valid': !Formulario.get('mensaje').errors && Formulario.get('mensaje').touched, 
+            'is-invalid': Formulario.get('mensaje').hasError('required') && Formulario.get('mensaje').touched || 
+            Formulario.get('mensaje').hasError('minlength')}" rows="3"></textarea>
+
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.mensaje.errors?.required && Formulario.controls.mensaje.touched">Mensaje Necesario</div>
+            <div class="invalid-feedback d-block" *ngIf="Formulario.controls.mensaje.errors?.minlength">Minimo 5 letras</div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="">Constraseña</label>
+            <input type="text" formControlName="contrasena" class="form-control" [ngClass]="{
+
+                'is-valid': !Formulario.get('contrasena').errors && Formulario.get('contrasena').touched,
+                
+                'is-invalid': Formulario.get('contrasena').hasError('required') && Formulario.get('contrasena').touched || 
+                Formulario.get('contrasena').hasError('minlength'),
+            
+                'is-invalid': Formulario.get('contrasena').hasError('pattern')}" aria-describedby="helpId " placeholder=" ">
+
+
+
+            <div class="invalid-feedback d-block " *ngIf="Formulario.controls.contrasena.errors?.required && Formulario.controls.contrasena.touched ">Debes escribir una contraseña</div>
+            <div class="invalid-feedback d-block " *ngIf="Formulario.controls.contrasena.errors?.minlength ">Minimo 8 Caracteres</div>
+            <div class="invalid-feedback d-block " *ngIf="Formulario.controls.contrasena.errors?.pattern ">Minimo 1 mayuscula, 1 minuscula, 1 caracter especial</div>
+
+
+        </div>
+
+        <div class="form-group ">
+            <label for=" ">Vuelva escribir la contraseña</label>
+            <input type="password " formControlName="contrasenaReafirmar" class="form-control" [ngClass]="{
+
+                'is-valid': !Formulario.get('contrasenaReafirmar').errors && Formulario.get('contrasenaReafirmar').touched,
+                
+                'is-invalid': Formulario.get('contrasenaReafirmar').hasError('required') && Formulario.get('contrasenaReafirmar').touched}" aria-describedby="helpId " placeholder=" ">
+
+            <div class="invalid-feedback d-block " *ngIf="Formulario.controls.contrasenaReafirmar.errors?.required && Formulario.controls.contrasenaReafirmar.touched">Debes escribir una contraseña</div>
+            <div class="invalid-feedback d-block " *ngIf="Formulario.controls.contrasenaReafirmar.errors?.NoIgual">Debe coincidir</div>
+
+
+        </div>
+        <!-- *ngIf="Formulario.valid " -->
+        <button type="button " (click)="VerEstadoFormulario() " class="btn btn-dark btn-lg btn-block ">Enviar Mensaje</button>
+    </div>
+</div>
