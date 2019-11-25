@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ForDoServicesService } from '../../services/for-do-services.service';
+import { contentThing, Thing } from '../../interfaces/thing.interface';
 
 
 
@@ -20,13 +21,7 @@ this._ForDoThings.postThing(this.Formulario.value).subscribe(
   (data)=>{
   console.log(data);
 })
-
-    // this._ForDoThings.postThing(this.Formulario.value).subscribe((data)=> {
-    //   console.log(data);
-    // })
-
-    
-  }
+}
 
   private crearFormulario(){
     this.Formulario= new FormGroup({
@@ -35,10 +30,19 @@ this._ForDoThings.postThing(this.Formulario.value).subscribe(
 
   }
 
+public things:contentThing[]
+
+  public showThing(){
+    this._ForDoThings.getThing().subscribe((data:Thing) =>{
+      this.things=data.Things
+      console.log(data);
+    })
+  }
 
 
   constructor(private _ForDoThings:ForDoServicesService) {
 
+    this.showThing()
     
    }
 
