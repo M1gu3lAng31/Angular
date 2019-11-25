@@ -1,0 +1,28 @@
+<div class="jumbotron mt-3">
+    <div class="form-group">
+        <label><h1>What's going to do?</h1></label>
+        <div class="input-group mb-3" [formGroup]="Formulario">
+            <input type="text" class="form-control" formControlName="thing" placeholder="Escribir cosa por hacer" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-success" *ngIf="Formulario.valid" (click)="obtenerThing()" type="button" id="button-addon2">Guardar Tarea</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-8 align-self-center">
+                            Cualquier texto
+                        </div>
+                        <div class="col-4 text-center"><button type="button" class="btn btn-dark btn-lg btn-block">Terminar Tarea</button></div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+</div>
